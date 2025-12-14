@@ -28,3 +28,53 @@ app-footer {
   max-width: $container-width;
   margin: 0 auto;
 }
+
+.input {
+  box-sizing: border-box;
+  padding: 17px 20px;
+  border: 2px solid #709FDC;
+  background: #FFFFFF;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $black-text-color;
+  outline: none;
+}
+
+.button {
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #709FDC;
+  border-radius: 5px;
+
+  &.button-transparent {
+    background-color: transparent;
+    border: 1px solid #6CAC72;
+    color: $blue-text-color;
+  }
+
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+
+
+}
+
+.mat-menu-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+    color: $black-text-color;
+  }
+}

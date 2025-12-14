@@ -13,8 +13,8 @@ header.header {
     font-weight: 500;
 
     .header-menu {
-      margin-left: 100px;
-      margin-right: 257px;
+      //margin-left: 100px;
+      //margin-right: 257px;
 
       nav ul {
         margin: 0;
@@ -25,9 +25,6 @@ header.header {
         li {
           list-style: none;
           border-bottom: 1px solid transparent;
-          //font-family: 'Montserrat', sans-serif;
-          //font-style: normal;
-          //font-weight: 500;
 
           a {
             color: $black-text-color;
@@ -44,7 +41,8 @@ header.header {
 
     .header-phone {
       color: $blue-text-color;
-      margin-right: 89px;
+      text-decoration: none;
+      //margin-right: 89px;
     }
 
     .header-actions {
@@ -53,11 +51,11 @@ header.header {
       a {
         display: flex;
         align-items: center;
+        text-decoration: none;
 
         span {
           color: $black-text-color;
           margin-left: 7px;
-
         }
       }
 

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {AuthService} from "../../../core/auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isLogged: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService,
+              private _snackBar: MatSnackBar,
+              private router: Router) {
+    this.isLogged = this.authService.getIsLoggedId();
+  }
 
   ngOnInit(): void {
+
+    this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
+      this.isLogged = isLoggedIn;
+    });
+  }
+
+  logout(): void {
+    this.authService.logout()
+      .subscribe({
+        next: () => {
+          this.doLogout();
+        },
+        error: () => {
+          this.doLogout();
+        }
+      });
+  }
+
+  doLogout(): void {
+    this.authService.removeTokens();
+    this.authService.userId = null;
+    this._snackBar.open('Вы вышли из системы');
+    this.router.navigate(['/']);
   }
 
 }
