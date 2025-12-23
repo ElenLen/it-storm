@@ -15,7 +15,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 export class SignupComponent implements OnInit {
 
   signupForm = this.fb.group({
-    name: ['', [Validators.required]],
+    name: ['', [Validators.required, Validators.pattern(/^([А-ЯЁ][а-яё]*\s*)*[А-ЯЁ][а-яё]*$/)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)]],
     agree: [false, [Validators.requiredTrue]]
