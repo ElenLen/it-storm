@@ -1,0 +1,120 @@
+@import "../../../assets/styles/variables";
+
+.main {
+  margin-bottom: 120px;
+
+  .container {
+    .main-carousel {
+      position: relative;
+      overflow: hidden; /* Скрываем все что выходит за границы */
+
+      .main-item {
+        width: 1239px !important;
+        height: 500px;
+        padding-left: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .main-item-label {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: $blue-text-color;
+          margin: 0;
+          padding: 0;
+        }
+
+        .main-item-title {
+          font-family: 'Lora', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 50px;
+          line-height: 130%;
+          color: #FFFFFF;
+          margin: 0;
+
+          strong, span {
+            color: $blue-text-color;
+          }
+        }
+
+        .main-item-text {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 130%;
+          color: #FFFFFF;
+          margin: 20px 0 10px 0;
+        }
+
+        .details-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 163px;
+          height: 51px;
+          background: $blue-text-color;
+          border-radius: 5px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 16px;
+          color: #FFFFFF;
+          cursor: pointer;
+          border: none;
+          margin-top: 40px;
+        }
+      }
+
+      .main-carousel-arrows {
+        a {
+          top: calc(50% - 30px);
+          cursor: pointer;
+          position: absolute;
+
+          &.move-backward {
+            left: 10px;
+            z-index: 5;
+          }
+
+          &.move-forward {
+            right: 10px;
+            z-index: 5;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+::ng-deep .owl-theme .owl-dots {
+  position: absolute !important;
+  bottom: 10px; /* Внутри слайда, над кнопкой */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 0 !important;
+  z-index: 10;
+
+  .owl-dot {
+    span {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #FFFFFF;
+      background: none;
+      margin: 10px;
+    }
+
+    &.active span {
+      background: #FFFFFF !important;
+    }
+
+    &:hover span {
+      background: #FFFFFF;
+    }
+  }
+}
+
