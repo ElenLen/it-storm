@@ -70,7 +70,24 @@
         </a>
       </div>
     </div>
+  </div>
+</section>
 
-
+<section class="services">
+  <div class="container">
+    <div class="services-title">Услуги, которые мы предлагаем</div>
+    <div class="services-cards">
+      <div class="services-card" *ngFor="let service of services">
+        <div class="card-image">
+          <img src="/assets/images/services/{{service.image}}" alt="service image">
+        </div>
+        <div class="card-title">{{ service.title }}</div>
+        <div class="card-text">{{ service.text }}</div>
+        <div class="card-info">
+          <div class="card-price">{{ service.price }}</div>
+          <button class="card-btn">Подробнее</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

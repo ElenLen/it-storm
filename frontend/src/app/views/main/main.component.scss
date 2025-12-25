@@ -86,7 +86,6 @@
           }
         }
       }
-
     }
   }
 }
@@ -118,3 +117,89 @@
   }
 }
 
+.services {
+  margin-bottom: 120px;
+
+  .container {
+    .services-title {
+      font-family: 'Lora', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 130%;
+      color: $blue-text-color;
+      margin-bottom: 40px;
+    }
+
+    .services-cards {
+      display: flex;
+      gap: 26px;
+
+      .services-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 290px;
+
+        .card-image img {
+          width: 100%;
+        }
+
+        .card-title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          color: $blue-text-color;
+          margin: 15px 0 10px 0;
+        }
+
+        .card-text {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $black-text-color;
+        }
+
+        .card-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 15px;
+
+          .card-price {
+            margin-right: 21px;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: $blue-text-color;
+            text-wrap: nowrap;
+          }
+
+          .card-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 40px;
+            margin: 0 auto;
+            width: 163px;
+            height: 51px;
+            background: $blue-text-color;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}
