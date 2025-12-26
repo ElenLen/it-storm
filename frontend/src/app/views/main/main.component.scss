@@ -203,3 +203,92 @@
     }
   }
 }
+
+.info {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .info-image {
+      margin-right: 68px;
+    }
+
+    .info-block {
+      .info-title {
+        font-family: 'Lora', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 38px;
+        color: $blue-text-color;
+      }
+
+      .info-txt {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #1E1A2B;
+        margin: 20px 0 40px 0;
+      }
+
+      .info-advantages {
+        .info-advantages-title {
+          font-family: 'Lora', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 26px;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .info-advantages-items {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+
+          .info-advantages-item {
+            display: flex;
+            align-items: center;
+            width: calc(50% - 20px); // Две колонки с отступом
+
+            .item-number {
+              margin-right: 20px;
+              position: relative;
+              width: 40px;
+              height: 40px;
+              flex-shrink: 0; // Запрещаем сжиматься
+              background: #B9D5FD;
+              border-radius: 50%;
+
+              .item-number-numb {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -65%); // Смещение вверх и влево
+                line-height: 1;
+                font-family: 'Lora', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 50px;
+                color: $blue-text-color;
+              }
+            }
+
+            .item-text {
+              font-family: 'Montserrat', sans-serif;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #1E1A2B;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
