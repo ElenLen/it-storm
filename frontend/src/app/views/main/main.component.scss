@@ -1,4 +1,5 @@
 @import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
 
 .main {
   margin-bottom: 120px;
@@ -29,12 +30,7 @@
         }
 
         .main-item-title {
-          font-family: 'Lora', sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 50px;
-          line-height: 130%;
-          color: #FFFFFF;
+          @include head-lora-50;
           margin: 0;
 
           strong, span {
@@ -122,18 +118,15 @@
 
   .container {
     .services-title {
-      font-family: 'Lora', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 38px;
-      line-height: 130%;
-      color: $blue-text-color;
+      @include head-lora-38;
       margin-bottom: 40px;
     }
 
     .services-cards {
       display: flex;
       gap: 26px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
 
       .services-card {
         display: flex;
@@ -216,11 +209,7 @@
 
     .info-block {
       .info-title {
-        font-family: 'Lora', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 38px;
-        color: $blue-text-color;
+        @include head-lora-38;
       }
 
       .info-txt {
@@ -235,11 +224,7 @@
 
       .info-advantages {
         .info-advantages-title {
-          font-family: 'Lora', sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 26px;
-          color: $blue-text-color;
+          @include head-lora-26;
           margin-bottom: 20px;
         }
 
@@ -269,11 +254,9 @@
                 left: 50%;
                 transform: translate(-50%, -65%); // Смещение вверх и влево
                 line-height: 1;
-                font-family: 'Lora', sans-serif;
-                font-style: normal;
+
+                @include head-lora-50;
                 font-weight: 500;
-                font-size: 50px;
-                color: $blue-text-color;
               }
             }
 
@@ -285,10 +268,346 @@
               line-height: 130%;
               color: #1E1A2B;
             }
-
           }
         }
       }
+    }
+  }
+}
+
+.blog {
+  margin-bottom: 120px;
+
+  .container {
+    .blog-title {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .blog-cards {
+      display: flex;
+      justify-content: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+
+      .blog-cart {
+        width: 292px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .blog-card-image {
+          position: relative;
+          width: 291px;
+          height: 291px;
+          border-radius: 5px;
+          margin-bottom: 15px;
+          overflow: hidden; // обрезаем всё, что выходит за границы
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // заполняет контейнер без искажений
+            object-position: center; // центрируем изображение (можно изменить)
+          }
+
+          .blog-card-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 89px;
+            height: 34px;
+            right: 9px;
+            top: 10px;
+            background: #FFFFFF;
+            border-radius: 5px;
+
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            text-align: center;
+            color: $blue-text-color;
+          }
+        }
+
+        .blog-card-title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .blog-card-text {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $black-text-color;
+          margin-bottom: 20px;
+        }
+
+        .blog-card-link {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          text-decoration-line: underline;
+          color: $blue-text-color;
+
+
+        }
+      }
+    }
+
+    .blog-link {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 40px;
+
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      color: $blue-text-color;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      svg {
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+
+  .container {
+    .reviews-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+      height: calc(100% - 2px); // Учитываем границу
+
+      .reviews-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border: 2px solid $blue-text-color;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+        .reviews-item-head {
+          display: flex;
+          align-items: center;
+
+          .reviews-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .reviews-item-name {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            color: $blue-text-color;
+          }
+        }
+
+        .reviews-item-text {
+          margin-top: 15px;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: $black-text-color;
+        }
+      }
+
+      .reviews-arrows {
+        display: flex;
+
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+
+          &.move-backward {
+            left: -25px;
+          }
+
+          &.move-forward {
+            right: -25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .contact-map {
+      margin-right: 26px;
+    }
+
+    .contact-items {
+
+      .contact-items-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .contact-item {
+        margin-bottom: 20px;
+
+        .contact-item-title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          color: $blue-text-color;
+          margin-bottom: 10px;
+        }
+
+        .contact-item-text {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $black-text-color;
+          text-decoration: none;
+
+          svg {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Стили для модальных окон
+.order-popup,
+.order-popup-thank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+
+  .order-container {
+    top: calc(50% - 245px);
+    left: calc(50% - 313px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    width: 727px;
+    height: 489px;
+    background: #FFFFFF;
+    border: 1.5px solid $blue-text-color;
+    border-radius: 10px;
+
+    .order-popup-close {
+      position: absolute;
+      cursor: pointer;
+      top: 30px;
+      right: 30px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .order-popup-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .order-popup-content {
+      display: flex;
+      flex-direction: column;
+      width: 422px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+
+      .input {
+        margin-bottom: 5px;
+        color: $blue-text-color;
+        background: #FFFFFF;
+        border: 1.5px solid $blue-text-color;
+        border-radius: 3px;
+      }
+
+      select.input {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23709FDC' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        padding-right: 40px;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .submit-error {
+        color: red;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .button{
+        margin-top: 15px;
+      }
+    }
+
+    .order-popup-thank-content {
+      font-family: 'Montserrat',  sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: center;
+      color: #1E1A2B;
+      margin-bottom: 40px;
+    }
+
+    .order-popup-thank-btn {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 130%;
+      color: #FFFFFF;
+      padding: 10px 20px;
     }
   }
 }
