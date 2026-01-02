@@ -78,3 +78,8 @@ app-footer {
     color: $black-text-color;
   }
 }
+
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $blue-text-color;
+}

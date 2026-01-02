@@ -13,8 +13,6 @@ header.header {
     font-weight: 500;
 
     .header-menu {
-      //margin-left: 100px;
-      //margin-right: 257px;
 
       nav ul {
         margin: 0;
@@ -30,8 +28,18 @@ header.header {
             color: $black-text-color;
             cursor: pointer;
             text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
 
-            &:hover, &:active {
+            transition: all 0.3s ease; // Добавляем плавный переход для всех свойств
+
+            &:hover {
+              color: $blue-text-color;
+            }
+
+            &.active {
               color: $blue-text-color;
             }
           }
@@ -52,6 +60,7 @@ header.header {
         display: flex;
         align-items: center;
         text-decoration: none;
+        cursor: pointer;
 
         span {
           color: $black-text-color;

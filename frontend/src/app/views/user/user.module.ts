@@ -1,12 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
 import {UserRoutingModule} from './user-routing.module';
 import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { AgreeComponent } from './agree/agree.component';
-
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -16,8 +15,9 @@ import { AgreeComponent } from './agree/agree.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    UserRoutingModule
   ]
 })
 export class UserModule {

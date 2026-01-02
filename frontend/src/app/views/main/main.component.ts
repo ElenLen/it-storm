@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {CarouselComponent, OwlOptions} from "ngx-owl-carousel-o";
 import {ArticlesService} from "../../shared/services/articles.service";
 import {PopularArticlesType} from "../../../types/popular-articles.type";
@@ -6,6 +6,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpErrorResponse} from "@angular/common/http";
 import {OrderType} from "../../../types/order.type";
 import {OrderService} from "../../shared/services/order.service";
+import {ScrollObserverService} from "../../shared/services/scroll-observer.service";
 
 @Component({
   selector: 'app-main',
@@ -13,10 +14,10 @@ import {OrderService} from "../../shared/services/order.service";
   styleUrls: ['./main.component.scss']
 })
 
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('owlCar') owlCar!: CarouselComponent; // Связь с шаблоном
   @ViewChild('owlCarRev') owlCarRev!: CarouselComponent;
-
+  private observedElements: HTMLElement[] = [];
 
   // Флаги для управления модальными окнами
   showOrderPopup = false;
@@ -148,8 +149,9 @@ export class MainComponent implements OnInit {
 
   constructor(private articlesService: ArticlesService,
               private fb: FormBuilder,
-              private orderService: OrderService
-              ) {
+              private orderService: OrderService,
+              private scrollObserver: ScrollObserverService
+  ) {
     // Инициализация формы
     this.orderForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -163,7 +165,7 @@ export class MainComponent implements OnInit {
     this.articlesService.getPopularArticles()
       .subscribe((data: PopularArticlesType[]) => {
         this.articles = data;
-    })
+      })
   }
 
   // Открытие модального окна с формой заказа
@@ -239,7 +241,7 @@ export class MainComponent implements OnInit {
         setTimeout(() => {
           const formElement = document.querySelector('.order-popup-content');
           if (formElement) {
-            formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            formElement.scrollIntoView({behavior: 'smooth', block: 'start'});
           }
         }, 100);
       }
@@ -249,6 +251,30 @@ export class MainComponent implements OnInit {
   // Закрытие модального окна "Спасибо"
   closeThankYouPopup(): void {
     this.showThankYouPopup = false;
+  }
+
+  // для скрола на странице
+  ngAfterViewInit() {
+    // Наблюдаем за всеми секциями
+    const sections = ['services', 'info', 'blog', 'reviews', 'contacts'];
+
+    // Добавляем задержку для гарантии, что DOM загружен
+    setTimeout(() => {
+      sections.forEach(sectionId => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          this.scrollObserver.observeElement(element);
+          this.observedElements.push(element);
+        }
+      });
+    }, 500); // Небольшая задержка для загрузки контента
+  }
+
+  ngOnDestroy() {
+    // Отписываемся от наблюдения при уничтожении компонента
+    this.observedElements.forEach(element => {
+      this.scrollObserver.unobserveElement(element);
+    });
   }
 
 }

@@ -22,19 +22,34 @@
         <nav>
           <ul>
             <li>
-              <a href="#">Услуги</a>
+              <a routerLink="/" fragment="services"
+                 [class.active]="activeSection === 'services'"
+                 (click)="navigateToSection('services', $event)">
+                Услуги</a>
             </li>
             <li>
-              <a href="#">О нас</a>
+              <a routerLink="/" fragment="info"
+                 [class.active]="activeSection === 'info'"
+                 (click)="navigateToSection('info', $event)">
+                О нас</a>
             </li>
             <li>
-              <a href="#">Статьи</a>
+              <a  routerLink="/" fragment="blog"
+                  [class.active]="activeSection === 'blog'"
+                  (click)="navigateToSection('blog', $event)">
+                Статьи</a>
             </li>
             <li>
-              <a href="#">Отзывы</a>
+              <a  routerLink="/" fragment="reviews"
+                  [class.active]="activeSection === 'reviews'"
+                  (click)="navigateToSection('reviews', $event)">
+                Отзывы</a>
             </li>
             <li>
-              <a href="#">Контакты</a>
+              <a routerLink="/" fragment="contacts"
+                 [class.active]="activeSection === 'contacts'"
+                 (click)="navigateToSection('contacts', $event)">
+                Контакты</a>
             </li>
           </ul>
         </nav>
@@ -50,7 +65,7 @@
       <div class="footer-contact footer-telephone">
         <div class="footer-address-title">Телефон</div>
         <a class="footer-address-text"  href="tel:+74993431334">+7 (499) 343-13-34</a>
-        <button class="btn footer-btn">Перезвоните мне</button>
+        <button class="btn footer-btn" (click)="createCallMeRequest()">Перезвоните мне</button>
       </div>
 
       <div class="footer-contact footer-email">
@@ -93,3 +108,73 @@
 
   </div>
 </footer>
+
+<!-- Модальное окно формы заказа -->
+<div class="order-popup" *ngIf="showOrderPopup">
+  <div class="order-container">
+    <div class="order-popup-close" (click)="closeOrderPopup()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+        <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="order-popup-title data-form-label">
+      Закажите бесплатную <br>
+      консультацию!
+    </div>
+    <form class="order-popup-content data-form-inputs"
+          [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+
+      <input type="text" class="input" placeholder="Ваше имя"
+             formControlName="name"
+             [ngStyle]="{'border-color': orderForm.get('name')?.invalid
+                   && (orderForm.get('name')?.dirty
+                   || orderForm.get('name')?.touched) ? 'red' : ''}">
+      <div *ngIf="orderForm.get('name')?.invalid && orderForm.get('name')?.touched"
+           class="error-message">
+        <span *ngIf="orderForm.get('name')?.errors?.['required']">Пожалуйста, введите ваше имя</span>
+        <span *ngIf="orderForm.get('name')?.errors?.['minlength']">Имя должно содержать минимум 2 символа</span>
+      </div>
+
+      <input type="tel" class="input" placeholder="Ваш номер телефона"
+             formControlName="phone"
+             [ngStyle]="{'border-color': orderForm.get('phone')?.invalid
+                   && (orderForm.get('phone')?.dirty
+                   || orderForm.get('phone')?.touched) ? 'red' : ''}">
+      <div *ngIf="orderForm.get('phone')?.invalid && orderForm.get('phone')?.touched"
+           class="error-message">
+        <span *ngIf="orderForm.get('phone')?.errors?.['required']">Пожалуйста, введите номер телефона</span>
+        <span *ngIf="orderForm.get('phone')?.errors?.['pattern']">Введите корректный номер телефона</span>
+      </div>
+
+      <button type="submit" class="button" [disabled]="orderForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Отправка...' : 'Заказать консультацию' }}
+      </button>
+
+      <!-- Сообщение об ошибке -->
+      <div *ngIf="submitError" class="submit-error">
+        Произошла ошибка при отправке формы, попробуйте еще раз.
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Модальное окно "Спасибо" -->
+<div class="order-popup-thank" *ngIf="showThankYouPopup">
+  <div class="order-container">
+    <div class="order-popup-close" (click)="closeThankYouPopup()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+        <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="order-popup-title">
+      Спасибо за вашу заявку!
+    </div>
+    <div class="order-popup-thank-content">
+      Мы свяжемся с вами при первой же возможности.
+    </div>
+    <button class="button order-popup-thank-btn" (click)="closeThankYouPopup()">Окей</button>
+  </div>
+</div>
