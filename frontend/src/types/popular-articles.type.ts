@@ -5,5 +5,5 @@ export type PopularArticlesType = {
   image: string,
   date: string,
   category: string,
-  url: string
+  url: string,
 }

@@ -161,20 +161,12 @@
 <section class="blog" id="blog" *ngIf="articles">
   <div class="container">
     <div class="blog-title">Популярные статьи из блога</div>
+
     <div class="blog-cards">
-      <div class="blog-cart" *ngFor="let article of articles">
-        <div class="blog-block">
-          <div class="blog-card-image">
-            <img src="assets/images/blog/{{article.image}}" alt="Blog image">
-            <div class="blog-card-label">{{ article.category }}</div>
-          </div>
-          <div class="blog-card-title">{{ article.title }}</div>
-          <div class="blog-card-text">{{ article.description }}</div>
-        </div>
-        <a href="#" class="blog-card-link">Читать дальше</a>
-      </div>
+      <article-card [articles]="articles" *ngFor="let articles of articles"></article-card>
     </div>
-    <a href="#" class="blog-link">
+
+    <a routerLink="/articles" class="blog-link">
       Перейти в блог
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

@@ -1,0 +1,14 @@
+<div class="blog-card" *ngIf="articles" (click)="navigate()">
+  <div class="blog-block">
+    <div class="blog-card-image">
+      <img src="assets/images/blog/{{articles.image}}" alt="Blog image">
+      <div class="blog-card-label">{{ articles.category }}</div>
+    </div>
+    <div class="blog-card-title">{{ articles.title }}</div>
+    <div class="blog-card-text">{{ articles.description }}</div>
+  </div>
+  <a [routerLink]="'/articles/' + articles.url"
+     class="blog-card-detail">
+    Читать дальше</a>
+</div>
+

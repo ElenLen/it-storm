@@ -12,6 +12,7 @@ export class CategoryService {
   constructor(private http: HttpClient) {
   }
 
+  // для фильтра список категорий
   getCategories(): Observable<CategoryType[]> {
     return this.http.get<CategoryType[]>(environment.api + "categories");
   }
