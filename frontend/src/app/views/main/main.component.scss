@@ -254,9 +254,10 @@
                 left: 50%;
                 transform: translate(-50%, -65%); // Смещение вверх и влево
                 line-height: 1;
-
                 @include head-lora-50;
                 font-weight: 500;
+                color: $blue-text-color;
+
               }
             }
 
