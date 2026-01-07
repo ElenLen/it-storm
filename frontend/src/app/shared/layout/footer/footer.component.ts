@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {filter, Subject, takeUntil} from "rxjs";
 import {NavigationEnd, Router} from "@angular/router";
 import {ScrollObserverService} from "../../services/scroll-observer.service";
@@ -12,7 +12,7 @@ import {OrderService} from "../../services/order.service";
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
   activeSection: string = '';
   private destroy$ = new Subject<void>();
 
@@ -28,7 +28,8 @@ export class FooterComponent implements OnInit {
   constructor(private router: Router,
               private fb: FormBuilder,
               private orderService: OrderService,
-              private scrollObserver: ScrollObserverService) {
+              private scrollObserver: ScrollObserverService
+  ) {
     // Инициализация формы
     this.orderForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
@@ -11,7 +11,8 @@ import {ArticleType} from "../../../types/article.type";
 })
 export class ArticlesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   // запрос топ популярных статей
   getPopularArticles(): Observable<PopularArticlesType[]> {
@@ -19,8 +20,8 @@ export class ArticlesService {
   }
 
   // запрос всех статей + параметры
-  getArticles(params: ActiveParamsType): Observable<{count: number, pages: number, items: PopularArticlesType[]}> {
-    return this.http.get<{count: number, pages: number, items: PopularArticlesType[]}>(environment.api + "articles", {
+  getArticles(params: ActiveParamsType): Observable<{ count: number, pages: number, items: PopularArticlesType[] }> {
+    return this.http.get<{ count: number, pages: number, items: PopularArticlesType[] }>(environment.api + "articles", {
       params: params
     });
   }

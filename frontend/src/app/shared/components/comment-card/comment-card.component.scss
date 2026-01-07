@@ -1,0 +1,115 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.comments-card {
+  margin: 40px 0;
+
+  .comments-card-header {
+    display: flex;
+
+    .comments-card-avatar {
+      box-sizing: border-box;
+      width: 60px;
+      height: 60px;
+      background: #B9D5FD;
+      border: 2px solid #709FDC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 26px;
+      border-radius: 50%;
+    }
+
+    .comments-card-name {
+      .comments-card-name-title {
+        font-weight: 600;
+        font-size: 18px;
+        color: $blue-text-color;
+        margin-bottom: 10px;
+      }
+
+      .comments-card-name-time {
+        font-weight: 600;
+        font-size: 14px;
+        color: #BEBEBE;
+      }
+    }
+  }
+
+  .comments-card-body {
+    width: 854px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #071739;
+    margin: 15px 0 39px 0;
+    overflow-wrap: anywhere;
+  }
+
+  .comments-card-footer {
+    display: flex;
+
+    a {
+      margin-right: 15px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #071739;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      span {
+        margin-right: 3px;
+        transition: color 0.3s ease;
+      }
+
+      &.active {
+        color: $blue-text-color;
+
+        svg path {
+          stroke: $blue-text-color;
+        }
+
+        span {
+          color: $blue-text-color;
+        }
+      }
+
+      &:hover:not(.disabled) {
+        opacity: 0.8;
+      }
+
+      // Стили для конкретных кнопок
+      &.like, &.dislike {
+        &:hover:not(.disabled) {
+          transform: translateY(-2px);
+        }
+      }
+
+      &.spam {
+        &:hover:not(.disabled) {
+          color: #ff5252;
+
+          svg path {
+            stroke: #ff5252;
+          }
+        }
+
+        &.active {
+          color: #ff5252;
+
+          svg path {
+            stroke: #ff5252;
+          }
+        }
+      }
+
+    }
+  }
+}

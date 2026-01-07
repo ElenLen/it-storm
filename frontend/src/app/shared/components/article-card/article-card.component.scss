@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  cursor: pointer;
 
   .blog-card-image {
     position: relative;
@@ -70,7 +71,5 @@
     font-size: 16px;
     text-decoration-line: underline;
     color: $blue-text-color;
-
-
   }
 }

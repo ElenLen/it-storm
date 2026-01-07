@@ -70,7 +70,7 @@ export class AuthInterceptor implements HttpInterceptor {
           return next.handle(authReq);
         }),
         catchError(error => {
-          //   при ошибке удалем токены и разлогиниваем
+          // при ошибке удаляем токены и разлогиниваемся
           this.authService.removeTokens();
           this.router.navigate(['/']);
           return throwError(() => error);

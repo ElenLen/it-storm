@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -8,7 +8,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class AgreeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     // Обработка фрагмента URL (якоря) для автоматической прокрутки
@@ -23,7 +24,7 @@ export class AgreeComponent implements OnInit {
     setTimeout(() => {
       const element = document.getElementById(fragment);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({behavior: 'smooth', block: 'start'});
       }
     }, 100); // Небольшая задержка для рендеринга
   }

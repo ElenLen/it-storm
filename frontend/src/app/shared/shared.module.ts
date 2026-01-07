@@ -5,17 +5,18 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {LoaderComponent} from "./components/loader/loader.component";
-import { ArticleCardComponent } from './components/article-card/article-card.component';
+import {ArticleCardComponent} from './components/article-card/article-card.component';
+import {CommentCardComponent} from './components/comment-card/comment-card.component';
 
 @NgModule({
-  declarations: [PasswordRepeatDirective, LoaderComponent, ArticleCardComponent],
+  declarations: [PasswordRepeatDirective, LoaderComponent, ArticleCardComponent, CommentCardComponent],
   imports: [
     CommonModule,
     RouterModule,
     MatProgressSpinnerModule,
     FormsModule,
   ],
-  exports: [PasswordRepeatDirective, LoaderComponent, ArticleCardComponent],
+  exports: [PasswordRepeatDirective, LoaderComponent, ArticleCardComponent, CommentCardComponent],
 })
 export class SharedModule {
 }

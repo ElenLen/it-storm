@@ -21,9 +21,9 @@
         </div>
       </div>
 
-      <!--      фильтр-->
+      <!-- фильтр-->
       <div class="articles-filters " [class.open]="open" (click)="toggle()">
-        <!--        шапка фильтра-->
+        <!-- шапка фильтра-->
         <div class="articles-filters-head">
           <span>Фильтр</span>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
           </svg>
         </div>
 
-        <!--        пункты фильтра-->
+        <!-- пункты фильтра-->
         <div class="articles-filters-body">
           <div class="articles-filters-item"
                *ngFor="let category of category"

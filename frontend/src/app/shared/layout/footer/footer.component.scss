@@ -36,7 +36,6 @@ footer.footer {
               font-style: normal;
               font-weight: 500;
               font-size: 16px;
-
               transition: all 0.3s ease; // Добавляем плавный переход для всех свойств
 
               &:hover {
@@ -108,10 +107,8 @@ footer.footer {
       color: $blue-text-color;
       margin-top: 6px;
     }
-
   }
 }
-
 
 // Стили для модальных окон
 .order-popup,
@@ -192,13 +189,13 @@ footer.footer {
         padding: 10px;
       }
 
-      .button{
+      .button {
         margin-top: 15px;
       }
     }
 
     .order-popup-thank-content {
-      font-family: 'Montserrat',  sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: 500;
       font-size: 14px;

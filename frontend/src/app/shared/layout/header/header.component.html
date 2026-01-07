@@ -34,15 +34,15 @@
               О нас</a>
           </li>
           <li>
-            <a  routerLink="/" fragment="blog"
-                [class.active]="activeSection === 'blog'"
-                (click)="navigateToSection('blog', $event)">
+            <a routerLink="/" fragment="blog"
+               [class.active]="activeSection === 'blog'"
+               (click)="navigateToSection('blog', $event)">
               Статьи</a>
           </li>
           <li>
-            <a  routerLink="/" fragment="reviews"
-                [class.active]="activeSection === 'reviews'"
-                (click)="navigateToSection('reviews', $event)">
+            <a routerLink="/" fragment="reviews"
+               [class.active]="activeSection === 'reviews'"
+               (click)="navigateToSection('reviews', $event)">
               Отзывы</a>
           </li>
           <li>
@@ -72,7 +72,7 @@
             d="M15.58 10.58C15.58 12.56 13.98 14.17 12 14.17C10.02 14.17 8.41998 12.56 8.41998 10.58C8.41998 8.60002 10.02 7 12 7C13.98 7 15.58 8.60002 15.58 10.58Z"
             stroke="#071739" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span >Войти</span>
+        <span>Войти</span>
       </a>
       <a *ngIf="isLogged" [matMenuTriggerFor]="menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@
             d="M15.58 10.58C15.58 12.56 13.98 14.17 12 14.17C10.02 14.17 8.41998 12.56 8.41998 10.58C8.41998 8.60002 10.02 7 12 7C13.98 7 15.58 8.60002 15.58 10.58Z"
             stroke="#071739" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Привет, {{userName}}!</span>
+        <span>Привет, {{ userName }}!</span>
       </a>
 
       <mat-menu #menu="matMenu">

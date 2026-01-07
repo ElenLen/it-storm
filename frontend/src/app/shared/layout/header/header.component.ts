@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../../core/auth/auth.service";
@@ -13,7 +13,7 @@ import {filter, Subject, takeUntil} from "rxjs";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   isLogged: boolean = false;
   userName: string = ''; // Добавляем переменную для имени пользователя
   activeSection: string = '';

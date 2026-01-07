@@ -45,11 +45,11 @@ export class ArticlesComponent implements OnInit {
         debounceTime(500),
       )
       .subscribe(params => {
-      this.parseUrlParams(params);
+        this.parseUrlParams(params);
 
-      // Загружаем категории и статьи
-      this.loadCategoriesAndArticles();
-    });
+        // Загружаем категории и статьи
+        this.loadCategoriesAndArticles();
+      });
   }
 
   // Метод для парсинга параметров из URL
@@ -106,7 +106,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   // добавление параметров в url
-  // Переключение категории (множественный выбор)
+  // переключение категории (множественный выбор)
   updateFilterParam(url: string) {
     const index = this.selectedCategoryUrl.indexOf(url);
 
@@ -127,7 +127,7 @@ export class ArticlesComponent implements OnInit {
       } else if (!existingTypeInParams && (index === -1)) {
         this.activeParams.categories = [...this.activeParams.categories, url];
       }
-    } else if  (index === -1) {
+    } else if (index === -1) {
       this.activeParams.categories = [url];
     }
 
@@ -139,7 +139,7 @@ export class ArticlesComponent implements OnInit {
 
   }
 
-  // Проверка, выбрана ли категория
+  // проверка, выбрана ли категория
   isCategorySelected(url: string): boolean {
     return this.selectedCategoryUrl.includes(url);
   }
@@ -167,7 +167,7 @@ export class ArticlesComponent implements OnInit {
 
 // Удаление категории
   removeCategory(url: string) {
-    this.updateFilterParam(url); // Используем тот же метод
+    this.updateFilterParam(url);
   }
 
   // при клике по цифре
@@ -201,7 +201,5 @@ export class ArticlesComponent implements OnInit {
         queryParams: this.activeParams
       });
     }
-
   }
-
 }

@@ -32,7 +32,6 @@ header.header {
             font-style: normal;
             font-weight: 500;
             font-size: 16px;
-
             transition: all 0.3s ease; // Добавляем плавный переход для всех свойств
 
             &:hover {
@@ -50,7 +49,6 @@ header.header {
     .header-phone {
       color: $blue-text-color;
       text-decoration: none;
-      //margin-right: 89px;
     }
 
     .header-actions {
