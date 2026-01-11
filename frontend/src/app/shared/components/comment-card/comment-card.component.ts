@@ -7,23 +7,36 @@ import {HttpErrorResponse} from "@angular/common/http";
 import {DefaultResponseType} from "../../../../types/default-response.type";
 import {Router} from "@angular/router";
 
+export const CommentAction = {
+  LIKE: 'like' as const,
+  DISLIKE: 'dislike' as const,
+  VIOLATE: 'violate' as const
+} as const;
+
+// Тип для использования CommentAction
+export type CommentActionType = typeof CommentAction[keyof typeof CommentAction];
+
 @Component({
   selector: 'comment-card',
   templateUrl: './comment-card.component.html',
   styleUrls: ['./comment-card.component.scss']
 })
+
 export class CommentCardComponent implements OnInit, OnChanges {
 
-  @Input() comments!: CommentsType;
-  @Input() userAction: string | null = null; // Действие от родительского компонента
+  @Input() comments: CommentsType; // Действие от родительского компонента
   @Output() commentUpdated = new EventEmitter<CommentsType>();
+// Принимаем string для совместимости
+  @Input() userAction: string | null = null;
 
   // Текущее действие пользователя (like/dislike/violate или null)
-  currentUserAction: string | null = null;
+  currentUserAction: CommentActionType | null = null;
   // Флаг для блокировки повторных кликов
   isActionInProgress: boolean = false;
   // Проверка авторизации
   isLogged: boolean = false;
+// Делаем константу доступной в шаблоне HTML
+  readonly CommentAction = CommentAction;
 
   constructor(private commentsService: CommentsService,
               private authService: AuthService,
@@ -31,12 +44,23 @@ export class CommentCardComponent implements OnInit, OnChanges {
               private router: Router,
   ) {
     this.isLogged = this.authService.getIsLoggedId();
+    this.comments = {
+      id: '',
+      text: '',
+      date: '',
+      likesCount: 0,
+      dislikesCount: 0,
+      user: {
+        id: '',
+        name: '',
+      }
+    }
   }
 
   ngOnInit(): void {
     // Устанавливаем действие из родительского компонента
-    if (this.userAction !== undefined) {
-      this.currentUserAction = this.userAction;
+    if (this.userAction !== undefined && this.userAction !== null) {
+      this.currentUserAction = this.validateAction(this.userAction);
     }
 
     // Если действие не передано, загружаем самостоятельно
@@ -48,7 +72,8 @@ export class CommentCardComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     // Если изменилось userAction от родителя, обновляем
     if (changes['userAction']) {
-      this.currentUserAction = changes['userAction'].currentValue;
+      const newValue = changes['userAction'].currentValue;
+      this.currentUserAction = newValue ? this.validateAction(newValue) : null;
     }
   }
 
@@ -59,7 +84,8 @@ export class CommentCardComponent implements OnInit, OnChanges {
     this.commentsService.getActionsComments(this.comments.id)
       .subscribe({
         next: (response) => {
-          this.currentUserAction = response?.action || null;
+          // Преобразуем строку в наш тип
+          this.currentUserAction = this.validateAction(response?.action);
         },
         error: (error) => {
           // 404 - это нормально, значит действия еще нет
@@ -71,8 +97,19 @@ export class CommentCardComponent implements OnInit, OnChanges {
       });
   }
 
+  // Валидация действия
+  private validateAction(action: string): CommentActionType | null {
+    if (!action) return null;
+
+    // Проверяем, является ли действие допустимым
+    if (Object.values(CommentAction).includes(action as any)) {
+      return action as CommentActionType;
+    }
+    return null;
+  }
+
   // Обработка действий
-  handleAction(action: 'like' | 'dislike' | 'violate'): void {
+  handleAction(action: CommentActionType): void {
     if (!this.isLogged) {
       this.showAuthMessage();
       return;
@@ -100,11 +137,11 @@ export class CommentCardComponent implements OnInit, OnChanges {
       });
   }
 
-  private handleSuccessAction(action: string): void {
-    if (action === 'like' || action === 'dislike') {
+  private handleSuccessAction(action: CommentActionType): void {
+    if (action === CommentAction.LIKE || action === CommentAction.DISLIKE) {
       // Логика обновления счетчиков на основе нового состояния
       const oldAction = this.currentUserAction;
-      let newAction: string | null = action;
+      let newAction: CommentActionType | null = action;
 
       // Если кликаем на уже активное действие - снимаем его
       if (oldAction === action) {
@@ -115,7 +152,7 @@ export class CommentCardComponent implements OnInit, OnChanges {
         newAction = action;
 
         // Убираем старое действие
-        if (oldAction === 'like' || oldAction === 'dislike') {
+        if (oldAction === CommentAction.LIKE || oldAction === CommentAction.DISLIKE) {
           this.adjustCounters(oldAction, -1);
         }
 
@@ -133,7 +170,7 @@ export class CommentCardComponent implements OnInit, OnChanges {
         duration: 3000,
         panelClass: ['success-snackbar']
       });
-    } else if (action === 'violate') {
+    } else if (action === CommentAction.VIOLATE) {
       this._snackBar.open('Жалоба отправлена', '', {
         duration: 3000,
         panelClass: ['success-snackbar']
@@ -141,16 +178,16 @@ export class CommentCardComponent implements OnInit, OnChanges {
     }
   }
 
-  private adjustCounters(action: string, delta: number): void {
-    if (action === 'like') {
+  private adjustCounters(action: CommentActionType, delta: number): void {
+    if (action === CommentAction.LIKE) {
       this.comments.likesCount = Math.max(0, this.comments.likesCount + delta);
-    } else if (action === 'dislike') {
+    } else if (action === CommentAction.DISLIKE) {
       this.comments.dislikesCount = Math.max(0, this.comments.dislikesCount + delta);
     }
   }
 
-  private handleErrorAction(action: string, response: DefaultResponseType): void {
-    if (action === 'violate' && response.message?.includes('уже применено')) {
+  private handleErrorAction(action: CommentActionType, response: DefaultResponseType): void {
+    if (action === CommentAction.VIOLATE && response.message?.includes('уже применено')) {
       this._snackBar.open('Жалоба уже отправлена', '', {
         duration: 3000,
         panelClass: ['error-snackbar']
@@ -163,8 +200,8 @@ export class CommentCardComponent implements OnInit, OnChanges {
     }
   }
 
-  private handleHttpError(action: string, error: HttpErrorResponse): void {
-    if (action === 'violate' && error.status === 400) {
+  private handleHttpError(action: CommentActionType, error: HttpErrorResponse): void {
+    if (action === CommentAction.VIOLATE && error.status === 400) {
       this._snackBar.open('Жалоба уже отправлена', '', {
         duration: 3000,
         panelClass: ['error-snackbar']
@@ -187,8 +224,21 @@ export class CommentCardComponent implements OnInit, OnChanges {
     });
   }
 
-  isActionActive(action: string): boolean {
+  isActionActive(action: CommentActionType): boolean {
     return this.currentUserAction === action;
+  }
+
+  // Вспомогательные методы для шаблона (опционально)
+  isLikeActive(): boolean {
+    return this.currentUserAction === CommentAction.LIKE;
+  }
+
+  isDislikeActive(): boolean {
+    return this.currentUserAction === CommentAction.DISLIKE;
+  }
+
+  isViolateActive(): boolean {
+    return this.currentUserAction === CommentAction.VIOLATE;
   }
 
 }

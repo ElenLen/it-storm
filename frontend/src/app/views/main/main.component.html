@@ -10,7 +10,7 @@
             <h1 class="main-item-title">Продвижение в <br>
               Instagram для вашего <br>
               бизнеса <strong>-15%</strong>!</h1>
-            <button class="btn details-btn" (click)="createRequest()">Подробнее</button>
+            <button class="btn details-btn" (click)="createRequest('Продвижение')">Подробнее</button>
           </div>
         </ng-template>
 
@@ -23,7 +23,7 @@
               <span>копирайтер</span>?</h1>
             <p class="main-item-text">Весь декабрь у нас действует акция <br>
               на работу копирайтера.</p>
-            <button class=" btn details-btn" (click)="createRequest()">Подробнее</button>
+            <button class=" btn details-btn" (click)="createRequest('Копирайтинг')">Подробнее</button>
           </div>
         </ng-template>
 
@@ -36,7 +36,7 @@
               SMM-агенств Москвы!</h1>
             <p class="main-item-text">Мы благодарим каждого, кто <br>
               голосовал за нас!</p>
-            <button class=" btn details-btn" (click)="createRequest()">Подробнее</button>
+            <button class=" btn details-btn" (click)="createRequest('Реклама')">Подробнее</button>
           </div>
         </ng-template>
       </owl-carousel-o>
@@ -85,7 +85,7 @@
         <div class="card-text">{{ service.text }}</div>
         <div class="card-info">
           <div class="card-price">{{ service.price }}</div>
-          <button class="card-btn" (click)="createRequest(service)">Подробнее</button>
+          <button class="card-btn" (click)="createRequest(service.title)">Подробнее</button>
         </div>
       </div>
     </div>

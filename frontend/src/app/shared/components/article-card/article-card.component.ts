@@ -9,9 +9,18 @@ import {Router} from "@angular/router";
 })
 export class ArticleCardComponent implements OnInit {
 
-  @Input() articles!: PopularArticlesType;
+  @Input() articles: PopularArticlesType;
 
   constructor(private router: Router,) {
+    this.articles = {
+      id: '',
+      title: '',
+      description: '',
+      image: '',
+      date: '',
+      category: '',
+      url: '',
+    }
   }
 
   ngOnInit(): void {

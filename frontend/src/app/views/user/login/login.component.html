@@ -12,12 +12,22 @@
                    [ngStyle]="{'border-color': loginForm.get('email')?.invalid
                  && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ? 'red' : ''}"
                    placeholder="Электронная почта" formControlName="email">
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                 class="error-message">
+              <span *ngIf="loginForm.get('email')?.errors?.['required']">Пожалуйста, введите вашу почту</span>
+              <span *ngIf="loginForm.get('email')?.errors?.['email']">Введите корректную почту</span>
+            </div>
           </div>
           <div class="auth-input">
             <input type="password" class="input"
                    [ngStyle]="{'border-color': loginForm.get('password')?.invalid
                  && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) ? 'red' : ''}"
                    placeholder="Пароль" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                 class="error-message">
+              <span *ngIf="loginForm.get('password')?.errors?.['required']">Пожалуйста, введите пароль</span>
+              <span *ngIf="loginForm.get('password')?.errors?.['pattern']">Введите корректный пароль</span>
+            </div>
           </div>
           <div class="auth-checkbox">
             <input type="checkbox" id="remember" formControlName="rememberMe">

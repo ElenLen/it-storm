@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {filter, Subject, takeUntil} from "rxjs";
-import {NavigationEnd, Router} from "@angular/router";
+import {Subject, takeUntil} from "rxjs";
+import {Router} from "@angular/router";
 import {ScrollObserverService} from "../../services/scroll-observer.service";
 import {OrderType} from "../../../../types/order.type";
 import {HttpErrorResponse} from "@angular/common/http";
@@ -45,48 +45,34 @@ export class FooterComponent implements OnInit, OnDestroy {
       .subscribe(section => {
         this.activeSection = section;
       });
-
-    // Отслеживаем завершение навигации
-    this.router.events
-      .pipe(
-        takeUntil(this.destroy$),
-        filter(event => event instanceof NavigationEnd)
-      )
-      .subscribe((event: any) => {
-        // Извлекаем якорь из URL
-        const urlTree = this.router.parseUrl(event.urlAfterRedirects);
-        const fragment = urlTree.fragment;
-
-        if (fragment && ['services', 'info', 'blog', 'reviews', 'contacts'].includes(fragment)) {
-          // Устанавливаем активную секцию сразу
-          this.activeSection = fragment;
-
-          // Даем время для прокрутки, затем обновляем через сервис
-          setTimeout(() => {
-            this.scrollObserver.setActiveSection(fragment);
-          }, 300);
-        }
-      });
   }
 
   // Метод для ручной установки активной секции при клике
   navigateToSection(section: string, event: MouseEvent) {
-    event.preventDefault(); // Предотвращаем нативный переход
+    event.preventDefault();
 
-    // Сразу устанавливаем активную секцию
     this.activeSection = section;
     this.scrollObserver.setActiveSection(section);
 
-    // Используем Angular Router для навигации
+    // Всегда переходим на главную с фрагментом
     this.router.navigate(['/'], {fragment: section}).then(() => {
-      // Прокручиваем к элементу после навигации
+      // После навигации дополнительная прокрутка для точности
       setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
+        this.scrollToElement(section);
       }, 100);
     });
+  }
+
+  private scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
   }
 
   ngOnDestroy(): void {

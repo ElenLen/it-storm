@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NavigationEnd, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../../core/auth/auth.service";
 import {UserService} from "../../services/user.service";
 import {UserInfoType} from "../../../../types/user-info.type";
 import {DefaultResponseType} from "../../../../types/default-response.type";
 import {ScrollObserverService} from "../../services/scroll-observer.service";
-import {filter, Subject, takeUntil} from "rxjs";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private _snackBar: MatSnackBar,
               private userService: UserService,
               private router: Router,
-              private scrollObserver: ScrollObserverService) {
+              private scrollObserver: ScrollObserverService,
+  ) {
     this.isLogged = this.authService.getIsLoggedId();
   }
 
@@ -48,52 +49,38 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.activeSection = section;
       });
 
-    // Отслеживаем завершение навигации
-    this.router.events
-      .pipe(
-        takeUntil(this.destroy$),
-        filter(event => event instanceof NavigationEnd)
-      )
-      .subscribe((event: any) => {
-        // Извлекаем якорь из URL
-        const urlTree = this.router.parseUrl(event.urlAfterRedirects);
-        const fragment = urlTree.fragment;
-
-        if (fragment && ['services', 'info', 'blog', 'reviews', 'contacts'].includes(fragment)) {
-          // Устанавливаем активную секцию сразу
-          this.activeSection = fragment;
-
-          // Даем время для прокрутки, затем обновляем через сервис
-          setTimeout(() => {
-            this.scrollObserver.setActiveSection(fragment);
-          }, 300);
-        }
-      });
-
     // Если уже залогинен при инициализации, запрашиваем данные
     if (this.isLogged) {
       this.getUserInfo();
     }
   }
 
-  // Метод для ручной установки активной секции при клике
   navigateToSection(section: string, event: MouseEvent) {
-    event.preventDefault(); // Предотвращаем нативный переход
+    event.preventDefault();
 
-    // Сразу устанавливаем активную секцию
     this.activeSection = section;
     this.scrollObserver.setActiveSection(section);
 
-    // Используем Angular Router для навигации
+    // Всегда переходим на главную с фрагментом
+    // Angular Router автоматически прокрутит к фрагменту
     this.router.navigate(['/'], {fragment: section}).then(() => {
-      // Прокручиваем к элементу после навигации
+      // После навигации дополнительная прокрутка для точности
       setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
+        this.scrollToElement(section);
       }, 100);
     });
+  }
+
+  private scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
   }
 
   // Выносим логику получения данных пользователя в отдельный метод
@@ -106,7 +93,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
 
           const userInfo = data as UserInfoType;
-          this.userName = userInfo.name; // Сохраняем имя пользователя
+          this.userName = userInfo.name;
         },
         error: (error) => {
           console.error('Ошибка при получении данных пользователя:', error);
@@ -129,7 +116,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   doLogout(): void {
     this.authService.removeTokens();
     this.authService.userId = null;
-    this.userName = ''; // Очищаем имя при выходе
+    this.userName = '';
     this._snackBar.open('Вы вышли из системы');
     this.router.navigate(['/']);
   }

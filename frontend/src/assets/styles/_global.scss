@@ -8,6 +8,8 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   min-height: 100vh;
+
+  scroll-behavior: smooth;
 }
 
 app-layout {
@@ -40,6 +42,12 @@ app-footer {
   font-size: 14px;
   color: $black-text-color;
   outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .button {

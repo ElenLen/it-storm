@@ -7,6 +7,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 import {OrderType} from "../../../types/order.type";
 import {OrderService} from "../../shared/services/order.service";
 import {ScrollObserverService} from "../../shared/services/scroll-observer.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -85,8 +86,8 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
 
   customOptionsReviews: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     margin: 26,
     dots: false,
@@ -149,6 +150,7 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private articlesService: ArticlesService,
               private fb: FormBuilder,
+              private route: ActivatedRoute,
               private orderService: OrderService,
               private scrollObserver: ScrollObserverService
   ) {
@@ -166,10 +168,33 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
       .subscribe((data: PopularArticlesType[]) => {
         this.articles = data;
       })
+
+    // Обработка фрагмента при загрузке страницы
+    this.route.fragment.subscribe(fragment => {
+      if (fragment && ['services', 'info', 'blog', 'reviews', 'contacts'].includes(fragment)) {
+
+        // Даем время на полную загрузку страницы
+        setTimeout(() => {
+          this.scrollToSection(fragment);
+        }, 100);
+      }
+    });
+  }
+
+  private scrollToSection(section: string): void {
+    const element = document.getElementById(section);
+    if (element) {
+      const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
   }
 
   // Открытие модального окна с формой заказа
-  createRequest(service?: any): void {
+  createRequest(serviceTitle: string): void {
     this.submitError = false;
 
     // Сбрасываем форму
@@ -178,9 +203,9 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     // Если передана конкретная услуга, устанавливаем ее в форме
-    if (service) {
+    if (serviceTitle) {
       this.orderForm.patchValue({
-        service: service.title
+        service: serviceTitle
       });
     }
 
@@ -267,7 +292,7 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
           this.observedElements.push(element);
         }
       });
-    }, 500); // Небольшая задержка для загрузки контента
+    }, 100); // Небольшая задержка для загрузки контента
   }
 
   ngOnDestroy() {
