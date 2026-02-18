@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userName: string = ''; // Добавляем переменную для имени пользователя
   activeSection: string = '';
   private destroy$ = new Subject<void>();
+  // burger
+  menuOpen = false;
 
   constructor(private authService: AuthService,
               private _snackBar: MatSnackBar,
@@ -55,6 +57,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  // burger
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    const headerMenu = document.querySelector('.header-menu');
+    if (headerMenu) {
+      if (this.menuOpen) {
+        headerMenu.classList.add('active');
+      } else {
+        headerMenu.classList.remove('active');
+      }
+    }
+  }
+
   navigateToSection(section: string, event: MouseEvent) {
     event.preventDefault();
 
@@ -69,6 +84,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.scrollToElement(section);
       }, 100);
     });
+
+    this.menuOpen = false; // Закрываем меню после клика
   }
 
   private scrollToElement(elementId: string): void {

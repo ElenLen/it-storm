@@ -16,7 +16,6 @@
     .main-carousel {
       position: relative;
       overflow: hidden;
-      //border-radius: 10px;
 
       @include respond-to(sm) {
         border-radius: 5px;
@@ -30,8 +29,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        //background-size: cover !important;
-        //background-position: center !important;
 
         @include respond-to(lg) {
           height: 400px;
@@ -141,9 +138,6 @@
           top: calc(50% - 30px);
           cursor: pointer;
           position: absolute;
-          //background: rgba(255, 255, 255, 0.2);
-          //padding: 10px;
-          //border-radius: 50%;
 
           @include respond-to(sm) {
             padding: 8px;
@@ -235,14 +229,13 @@
       gap: 26px;
       flex-wrap: wrap;
       justify-content: flex-start;
-      // Центрируем на мобильных
-      //justify-content: center;
 
       @include respond-to(lg) {
         gap: 20px;
       }
 
       @include respond-to(md) {
+        justify-content: center;
         gap: 15px;
       }
 
@@ -251,33 +244,14 @@
         flex-direction: column;
         justify-content: space-between;
         width: 290px;
-        //width: calc(25% - 20px); // 4 карточки в ряд
-
-        @include respond-to(lg) {
-          width: calc(33.333% - 20px); // 3 карточки
-        }
-
-        @include respond-to(md) {
-          width: calc(50% - 15px); // 2 карточки
-        }
+        max-width: 290px;
 
         @include respond-to(sm) {
-          width: 100%; // 1 карточка
-          max-width: 290px;
+          width: 100%;
         }
 
         .card-image img {
           width: 100%;
-          //height: 200px;
-          //object-fit: cover;
-
-          @include respond-to(md) {
-            height: 180px;
-          }
-
-          @include respond-to(sm) {
-            height: 160px;
-          }
         }
 
         .card-title {
@@ -300,7 +274,6 @@
           font-size: 14px;
           line-height: 130%;
           color: $black-text-color;
-          //flex-grow: 1;
         }
 
         .card-info {
@@ -308,15 +281,16 @@
           align-items: center;
           justify-content: space-between;
           margin-top: 15px;
+          gap: 15px;
 
           @include respond-to(sm) {
             flex-direction: column;
             gap: 10px;
             align-items: stretch;
+            flex-wrap: wrap;
           }
 
           .card-price {
-            margin-right: 21px;
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: 600;
@@ -336,7 +310,6 @@
             justify-content: center;
             align-items: center;
             padding: 15px 40px;
-            margin: 0 auto;
             width: 163px;
             height: 51px;
             background: $blue-text-color;
@@ -386,7 +359,7 @@
 
     .info-image {
       margin-right: 68px;
-      flex-shrink: 0;//new
+      flex-shrink: 0;
 
       @include respond-to(lg) {
         margin-right: 0;
@@ -394,7 +367,6 @@
         text-align: center;
       }
 
-      //new block
       img {
         max-width: 100%;
         height: auto;
@@ -406,7 +378,7 @@
     }
 
     .info-block {
-      flex-grow: 1;//new
+      flex-grow: 1;
 
       .info-title {
         @include head-lora-38;
@@ -489,7 +461,7 @@
               font-size: 14px;
               line-height: 130%;
               color: #1E1A2B;
-              flex-grow: 1;//new
+              flex-grow: 1;
             }
           }
         }
@@ -524,6 +496,10 @@
       justify-content: flex-start;
       gap: 24px;
       flex-wrap: wrap;
+
+      @include respond-to(md) {
+        justify-content: center;
+      }
 
       @include respond-to(sm) {
         justify-content: center;
@@ -749,20 +725,20 @@
 
     @include respond-to(lg) {
       flex-direction: column;
+      align-items: center;
     }
 
     .contact-map {
       margin-right: 26px;
-      //flex: 1;//new
 
       @include respond-to(lg) {
         margin-right: 0;
         margin-bottom: 30px;
+        max-width: 100%;
+        overflow: hidden;
       }
 
       iframe {
-        //width: 100%;
-        //height: 438px;
 
         @include respond-to(md) {
           height: 350px;
@@ -775,7 +751,6 @@
     }
 
     .contact-items {
-      //flex: 1;
 
       .contact-items-title {
         @include head-lora-38;
@@ -806,10 +781,6 @@
           line-height: 130%;
           color: $black-text-color;
           text-decoration: none;
-
-          //svg {
-          //  margin-right: 20px;
-          //}
 
           a {
             margin-right: 20px;
@@ -992,34 +963,3 @@
     }
   }
 }
-
-
-//new
-// Модальные окна (адаптив)
-//.order-popup,
-//.order-popup-thank {
-//  .order-container {
-//    top: 50%;
-//    left: 50%;
-//    transform: translate(-50%, -50%);
-//    width: 90%;
-//    max-width: 727px;
-//    height: auto;
-//    min-height: 489px;
-//    padding: 20px;
-//
-//    @include respond-to(sm) {
-//      width: 95%;
-//      padding: 15px;
-//    }
-//
-//    .order-popup-content {
-//      width: 100%;
-//      max-width: 422px;
-//
-//      .input, button {
-//        width: 100%;
-//      }
-//    }
-//  }
-//}

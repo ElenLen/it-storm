@@ -280,7 +280,6 @@ footer.footer {
   }
 }
 
-
 @include respond-to(lg) {
   footer.footer {
     padding-top: 30px;
@@ -322,7 +321,7 @@ footer.footer {
       .footer-menu {
         margin-left: 0;
         margin-top: 20px;
-        width: 100%;
+        //width: 100%;
 
         nav ul {
           flex-wrap: wrap;
@@ -333,6 +332,8 @@ footer.footer {
     }
 
     .footer-contacts {
+      justify-content: center;
+
       .footer-contact {
         width: 100%;
         margin-right: 0;

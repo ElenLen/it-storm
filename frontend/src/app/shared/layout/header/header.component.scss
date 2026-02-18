@@ -29,8 +29,6 @@ header.header {
 
     // Логотип
     .logo {
-      //display: flex;
-      //align-items: center;
 
       @include respond-to(lg) {
         order: 1;
@@ -51,13 +49,12 @@ header.header {
     // Меню навигации
     .header-menu {
       @include respond-to(lg) {
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
+        order: 2;
+        padding-left: 20px;
       }
 
       @include respond-to(md) {
-        margin-top: 15px;
+        margin-top: 0;
         display: none;
         position: absolute;
         top: 100%;
@@ -67,7 +64,6 @@ header.header {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 100;
         padding: 20px;
-        margin-top: 0;
 
         &.active {
           display: block;
@@ -86,12 +82,7 @@ header.header {
 
         @include respond-to(md) {
           flex-direction: column;
-          gap: 15px;
           align-items: flex-start;
-        }
-
-        @include respond-to(sm) {
-          gap: 12px;
         }
 
         li {
@@ -101,7 +92,6 @@ header.header {
           @include respond-to(md) {
             width: 100%;
             margin-bottom: 0;
-            padding-bottom: 10px;
             border-bottom: 1px solid #E0E0E0;
 
             &:last-child {
@@ -117,7 +107,7 @@ header.header {
             font-style: normal;
             font-weight: 500;
             font-size: 16px;
-            transition: all 0.3s ease; // Добавляем плавный переход для всех свойств
+            transition: all 0.3s ease;
 
             @include respond-to(lg) {
               font-size: 14px;
@@ -127,7 +117,7 @@ header.header {
               font-size: 16px;
               display: block;
               width: 100%;
-              padding: 8px 0;
+              padding: 8px 0 8px 10px;
             }
 
             @include respond-to(sm) {
@@ -172,7 +162,7 @@ header.header {
       display: flex;
 
       @include respond-to(lg) {
-        order: 2;
+        order: 3;
       }
 
       @include respond-to(sm) {
@@ -187,7 +177,7 @@ header.header {
 
         @include respond-to(sm) {
           span {
-            display: none; // Скрываем текст на мобильных
+            display: none;
           }
 
           svg {
@@ -209,14 +199,14 @@ header.header {
   }
 }
 
-// Бургер-меню (будет появляться на мобильных)
+// Бургер-меню
 .header-burger {
   display: none;
 
   @include respond-to(md) {
     display: block;
-    order: 2;
-    margin-left: auto;
+    order: 4;
+    margin-left: 15px;
     margin-right: 15px;
     cursor: pointer;
     z-index: 101;
