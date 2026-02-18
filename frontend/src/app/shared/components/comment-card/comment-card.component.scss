@@ -4,8 +4,16 @@
 .comments-card {
   margin: 40px 0;
 
+  @include respond-to(sm) {
+    margin: 30px 0;
+  }
+
   .comments-card-header {
     display: flex;
+
+    @include respond-to(sm) {
+      flex-wrap: wrap;
+    }
 
     .comments-card-avatar {
       box-sizing: border-box;
@@ -18,6 +26,13 @@
       justify-content: center;
       margin-right: 26px;
       border-radius: 50%;
+      flex-shrink: 0;
+
+      @include respond-to(sm) {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+      }
     }
 
     .comments-card-name {
@@ -26,12 +41,21 @@
         font-size: 18px;
         color: $blue-text-color;
         margin-bottom: 10px;
+
+        @include respond-to(sm) {
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
       }
 
       .comments-card-name-time {
         font-weight: 600;
         font-size: 14px;
         color: #BEBEBE;
+
+        @include respond-to(sm) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -44,10 +68,25 @@
     color: #071739;
     margin: 15px 0 39px 0;
     overflow-wrap: anywhere;
+
+    @include respond-to(lg) {
+      width: 100%;
+      max-width: 854px;
+    }
+
+    @include respond-to(sm) {
+      margin: 12px 0 25px 0;
+      font-size: 13px;
+    }
   }
 
   .comments-card-footer {
     display: flex;
+    flex-wrap: wrap;
+
+    @include respond-to(sm) {
+      gap: 10px;
+    }
 
     a {
       margin-right: 15px;
@@ -58,6 +97,11 @@
       align-items: center;
       cursor: pointer;
       transition: all 0.3s ease;
+
+      @include respond-to(sm) {
+        margin-right: 10px;
+        font-size: 12px;
+      }
 
       &.disabled {
         opacity: 0.5;

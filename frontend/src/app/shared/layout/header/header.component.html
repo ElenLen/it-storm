@@ -18,6 +18,13 @@
       </svg>
     </a>
 
+    <!--     Добавим в header.component.html кнопку бургера после логотипа:-->
+    <div class="header-burger" [class.active]="menuOpen" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="header-menu">
       <nav>
         <ul>

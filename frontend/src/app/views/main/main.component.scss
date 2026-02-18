@@ -4,18 +4,52 @@
 .main {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     .main-carousel {
       position: relative;
       overflow: hidden;
+      //border-radius: 10px;
+
+      @include respond-to(sm) {
+        border-radius: 5px;
+      }
 
       .main-item {
-        width: 1239px !important;
+        width: 100% !important;
+        max-width: 1239px;
         height: 500px;
         padding-left: 80px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        //background-size: cover !important;
+        //background-position: center !important;
+
+        @include respond-to(lg) {
+          height: 400px;
+          padding-left: 60px;
+        }
+
+        @include respond-to(md) {
+          height: 350px;
+          padding-left: 40px;
+        }
+
+        @include respond-to(sm) {
+          height: 280px;
+          padding-left: 20px;
+          padding-right: 20px;
+          align-items: center;
+          text-align: center;
+        }
 
         .main-item-label {
           font-family: 'Montserrat', sans-serif;
@@ -27,6 +61,11 @@
           color: $blue-text-color;
           margin: 0;
           padding: 0;
+
+          @include respond-to(sm) {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+          }
         }
 
         .main-item-title {
@@ -35,6 +74,13 @@
 
           strong, span {
             color: $blue-text-color;
+          }
+
+          @include respond-to(sm) {
+            margin: 10px 0;
+            br {
+              display: none;
+            }
           }
         }
 
@@ -46,6 +92,17 @@
           line-height: 130%;
           color: #FFFFFF;
           margin: 20px 0 10px 0;
+
+          @include respond-to(md) {
+            font-size: 20px;
+          }
+
+          @include respond-to(sm) {
+            font-size: 16px;
+            br {
+              display: none;
+            }
+          }
         }
 
         .details-btn {
@@ -62,6 +119,20 @@
           cursor: pointer;
           border: none;
           margin-top: 40px;
+
+          @include respond-to(md) {
+            width: 140px;
+            height: 45px;
+            font-size: 14px;
+            margin-top: 30px;
+          }
+
+          @include respond-to(sm) {
+            width: 120px;
+            height: 40px;
+            font-size: 12px;
+            margin-top: 20px;
+          }
         }
       }
 
@@ -70,6 +141,14 @@
           top: calc(50% - 30px);
           cursor: pointer;
           position: absolute;
+          //background: rgba(255, 255, 255, 0.2);
+          //padding: 10px;
+          //border-radius: 50%;
+
+          @include respond-to(sm) {
+            padding: 8px;
+            top: calc(50% - 20px);
+          }
 
           &.move-backward {
             left: 10px;
@@ -79,6 +158,13 @@
           &.move-forward {
             right: 10px;
             z-index: 5;
+          }
+
+          svg {
+            @include respond-to(sm) {
+              width: 12px;
+              height: auto;
+            }
           }
         }
       }
@@ -94,6 +180,10 @@
   margin-top: 0 !important;
   z-index: 10;
 
+  @include respond-to(sm) {
+    bottom: 5px;
+  }
+
   .owl-dot {
     span {
       width: 10px;
@@ -101,6 +191,12 @@
       border: 1px solid #FFFFFF;
       background: none;
       margin: 10px;
+
+      @include respond-to(sm) {
+        width: 8px;
+        height: 8px;
+        margin: 5px;
+      }
     }
 
     &.active span {
@@ -116,10 +212,22 @@
 .services {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     .services-title {
       @include head-lora-38;
       margin-bottom: 40px;
+
+      @include respond-to(sm) {
+        text-align: center;
+      }
     }
 
     .services-cards {
@@ -127,15 +235,49 @@
       gap: 26px;
       flex-wrap: wrap;
       justify-content: flex-start;
+      // Центрируем на мобильных
+      //justify-content: center;
+
+      @include respond-to(lg) {
+        gap: 20px;
+      }
+
+      @include respond-to(md) {
+        gap: 15px;
+      }
 
       .services-card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 290px;
+        //width: calc(25% - 20px); // 4 карточки в ряд
+
+        @include respond-to(lg) {
+          width: calc(33.333% - 20px); // 3 карточки
+        }
+
+        @include respond-to(md) {
+          width: calc(50% - 15px); // 2 карточки
+        }
+
+        @include respond-to(sm) {
+          width: 100%; // 1 карточка
+          max-width: 290px;
+        }
 
         .card-image img {
           width: 100%;
+          //height: 200px;
+          //object-fit: cover;
+
+          @include respond-to(md) {
+            height: 180px;
+          }
+
+          @include respond-to(sm) {
+            height: 160px;
+          }
         }
 
         .card-title {
@@ -145,6 +287,10 @@
           font-size: 20px;
           color: $blue-text-color;
           margin: 15px 0 10px 0;
+
+          @include respond-to(md) {
+            font-size: 18px;
+          }
         }
 
         .card-text {
@@ -154,6 +300,7 @@
           font-size: 14px;
           line-height: 130%;
           color: $black-text-color;
+          //flex-grow: 1;
         }
 
         .card-info {
@@ -161,6 +308,12 @@
           align-items: center;
           justify-content: space-between;
           margin-top: 15px;
+
+          @include respond-to(sm) {
+            flex-direction: column;
+            gap: 10px;
+            align-items: stretch;
+          }
 
           .card-price {
             margin-right: 21px;
@@ -170,6 +323,11 @@
             font-size: 20px;
             color: $blue-text-color;
             text-wrap: nowrap;
+
+            @include respond-to(sm) {
+              margin-right: 0;
+              text-align: center;
+            }
           }
 
           .card-btn {
@@ -190,6 +348,17 @@
             font-weight: 400;
             font-size: 16px;
             color: #FFFFFF;
+
+            @include respond-to(md) {
+              padding: 12px 30px;
+              width: 140px;
+              height: 45px;
+              font-size: 14px;
+            }
+
+            @include respond-to(sm) {
+              width: 100%;
+            }
           }
         }
       }
@@ -200,16 +369,51 @@
 .info {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     display: flex;
 
+    @include respond-to(lg) {
+      flex-direction: column;
+    }
+
     .info-image {
       margin-right: 68px;
+      flex-shrink: 0;//new
+
+      @include respond-to(lg) {
+        margin-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      //new block
+      img {
+        max-width: 100%;
+        height: auto;
+
+        @include respond-to(md) {
+          max-width: 80%;
+        }
+      }
     }
 
     .info-block {
+      flex-grow: 1;//new
+
       .info-title {
         @include head-lora-38;
+
+        @include respond-to(sm) {
+          text-align: center;
+        }
       }
 
       .info-txt {
@@ -234,10 +438,18 @@
           justify-content: space-between;
           gap: 20px;
 
+          @include respond-to(sm) {
+            gap: 15px;
+          }
+
           .info-advantages-item {
             display: flex;
             align-items: center;
             width: calc(50% - 20px); // Две колонки с отступом
+
+            @include respond-to(sm) {
+              width: 100%;
+            }
 
             .item-number {
               margin-right: 20px;
@@ -248,6 +460,12 @@
               background: #B9D5FD;
               border-radius: 50%;
 
+              @include respond-to(sm) {
+                width: 35px;
+                height: 35px;
+                margin-right: 15px;
+              }
+
               .item-number-numb {
                 position: absolute;
                 top: 50%;
@@ -257,6 +475,10 @@
                 @include head-lora-50;
                 font-weight: 500;
                 color: $blue-text-color;
+
+                @include respond-to(sm) {
+                  font-size: 18px;
+                }
               }
             }
 
@@ -267,6 +489,7 @@
               font-size: 14px;
               line-height: 130%;
               color: #1E1A2B;
+              flex-grow: 1;//new
             }
           }
         }
@@ -278,10 +501,22 @@
 .blog {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     .blog-title {
       @include head-lora-38;
       margin-bottom: 40px;
+
+      @include respond-to(sm) {
+        text-align: center;
+      }
     }
 
     .blog-cards {
@@ -289,6 +524,11 @@
       justify-content: flex-start;
       gap: 24px;
       flex-wrap: wrap;
+
+      @include respond-to(sm) {
+        justify-content: center;
+        gap: 20px;
+      }
     }
 
     .blog-link {
@@ -304,6 +544,11 @@
       cursor: pointer;
       text-decoration: none;
 
+      @include respond-to(sm) {
+        justify-content: center;
+        font-size: 16px;
+      }
+
       svg {
         margin-left: 14px;
       }
@@ -314,23 +559,71 @@
 .reviews {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     .reviews-title {
       @include head-lora-38;
       margin-bottom: 20px;
+
+      @include respond-to(sm) {
+        text-align: center;
+      }
     }
 
     .reviews-carousel {
       position: relative;
       height: calc(100% - 2px); // Учитываем границу
+      padding: 0 50px; // Отступы для стрелок
+
+      @include respond-to(md) {
+        padding: 0 45px;
+      }
+
+      @include respond-to(sm) {
+        padding: 0 35px;
+      }
+
+      ::ng-deep .owl-stage {
+        display: flex;
+      }
+
+      ::ng-deep .owl-stage-outer {
+        overflow: hidden; // Карточки не выходят за пределы контейнера
+        padding-left: 2px; // Отступ для бордера первой карточки
+        margin-left: -2px; // Компенсируем padding для правильного выравнивания
+      }
+
+      ::ng-deep .owl-item {
+        display: flex;
+        justify-content: center;
+      }
 
       .reviews-item {
-        width: 396px;
+        width: 100%;
+        max-width: 100%;
         height: 267px;
         padding: 30px;
         border: 2px solid $blue-text-color;
         border-radius: 5px;
         box-sizing: border-box;
+        margin: 0 auto;
+
+        @include respond-to(md) {
+          height: auto;
+          min-height: 267px;
+          padding: 25px;
+        }
+
+        @include respond-to(sm) {
+          padding: 20px;
+        }
 
         .reviews-item-head {
           display: flex;
@@ -343,6 +636,12 @@
             background-position: center;
             background-size: cover;
             margin-right: 26px;
+
+            @include respond-to(sm) {
+              width: 50px;
+              height: 50px;
+              margin-right: 15px;
+            }
           }
 
           .reviews-item-name {
@@ -351,6 +650,10 @@
             font-weight: 600;
             font-size: 18px;
             color: $blue-text-color;
+
+            @include respond-to(sm) {
+              font-size: 16px;
+            }
           }
         }
 
@@ -362,6 +665,10 @@
           font-size: 16px;
           line-height: 140%;
           color: $black-text-color;
+
+          @include respond-to(sm) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -369,17 +676,56 @@
         display: flex;
 
         a {
-          top: calc(50% - 5px);
+          top: 50%;
+          transform: translateY(-50%);
           display: flex;
           position: absolute;
           cursor: pointer;
+          z-index: 10;
+          background: rgba(255, 255, 255, 0.95);
+          padding: 10px;
+          border-radius: 50%;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          transition: all 0.3s ease;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          }
+
+          @include respond-to(md) {
+            padding: 8px;
+          }
+
+          @include respond-to(sm) {
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.98);
+          }
 
           &.move-backward {
-            left: -25px;
+            left: 0;
           }
 
           &.move-forward {
-            right: -25px;
+            right: 0;
+          }
+
+          svg {
+            display: block;
+            width: 10px;
+            height: 19px;
+
+            @include respond-to(md) {
+              width: 9px;
+              height: 17px;
+            }
+
+            @include respond-to(sm) {
+              width: 8px;
+              height: 15px;
+            }
           }
         }
       }
@@ -390,18 +736,54 @@
 .contacts {
   margin-bottom: 120px;
 
+  @include respond-to(md) {
+    margin-bottom: 60px;
+  }
+
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+  }
+
   .container {
     display: flex;
 
+    @include respond-to(lg) {
+      flex-direction: column;
+    }
+
     .contact-map {
       margin-right: 26px;
+      //flex: 1;//new
+
+      @include respond-to(lg) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+
+      iframe {
+        //width: 100%;
+        //height: 438px;
+
+        @include respond-to(md) {
+          height: 350px;
+        }
+
+        @include respond-to(sm) {
+          height: 250px;
+        }
+      }
     }
 
     .contact-items {
+      //flex: 1;
 
       .contact-items-title {
         @include head-lora-38;
         margin-bottom: 20px;
+
+        @include respond-to(sm) {
+          text-align: center;
+        }
       }
 
       .contact-item {
@@ -425,8 +807,16 @@
           color: $black-text-color;
           text-decoration: none;
 
-          svg {
+          //svg {
+          //  margin-right: 20px;
+          //}
+
+          a {
             margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
           }
         }
       }
@@ -446,8 +836,9 @@
   height: 100%;
 
   .order-container {
-    top: calc(50% - 245px);
-    left: calc(50% - 313px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -459,12 +850,32 @@
     background: #FFFFFF;
     border: 1.5px solid $blue-text-color;
     border-radius: 10px;
+    padding: 20px;
+
+    @include respond-to(md) {
+      width: 90%;
+      max-width: 727px;
+      height: auto;
+      min-height: 489px;
+      padding: 30px 20px;
+    }
+
+    @include respond-to(sm) {
+      width: 95%;
+      padding: 20px 15px;
+      min-height: auto;
+    }
 
     .order-popup-close {
       position: absolute;
       cursor: pointer;
       top: 30px;
       right: 30px;
+
+      @include respond-to(sm) {
+        top: 15px;
+        right: 15px;
+      }
 
       &:hover {
         opacity: 0.7;
@@ -474,6 +885,10 @@
     .order-popup-title {
       @include head-lora-38;
       margin-bottom: 20px;
+
+      @include respond-to(sm) {
+        margin-bottom: 15px;
+      }
     }
 
     .order-popup-content {
@@ -484,12 +899,28 @@
       font-weight: 400;
       font-size: 14px;
 
+      @include respond-to(md) {
+        width: 100%;
+        max-width: 422px;
+      }
+
+      @include respond-to(sm) {
+        width: 100%;
+        font-size: 13px;
+      }
+
       .input {
         margin-bottom: 5px;
         color: $blue-text-color;
         background: #FFFFFF;
         border: 1.5px solid $blue-text-color;
         border-radius: 3px;
+        width: 100%;
+
+        @include respond-to(sm) {
+          font-size: 13px;
+          padding: 12px 15px;
+        }
       }
 
       select.input {
@@ -504,16 +935,31 @@
         color: red;
         font-size: 12px;
         margin-bottom: 5px;
+
+        @include respond-to(sm) {
+          font-size: 11px;
+        }
       }
 
       .submit-error {
         color: red;
         font-size: 14px;
         padding: 10px;
+
+        @include respond-to(sm) {
+          font-size: 12px;
+          padding: 8px;
+        }
       }
 
       .button {
         margin-top: 15px;
+        width: 100%;
+
+        @include respond-to(sm) {
+          padding: 12px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -525,6 +971,11 @@
       text-align: center;
       color: #1E1A2B;
       margin-bottom: 40px;
+
+      @include respond-to(sm) {
+        font-size: 13px;
+        margin-bottom: 30px;
+      }
     }
 
     .order-popup-thank-btn {
@@ -533,6 +984,42 @@
       line-height: 130%;
       color: #FFFFFF;
       padding: 10px 20px;
+
+      @include respond-to(sm) {
+        padding: 12px 20px;
+        font-size: 13px;
+      }
     }
   }
 }
+
+
+//new
+// Модальные окна (адаптив)
+//.order-popup,
+//.order-popup-thank {
+//  .order-container {
+//    top: 50%;
+//    left: 50%;
+//    transform: translate(-50%, -50%);
+//    width: 90%;
+//    max-width: 727px;
+//    height: auto;
+//    min-height: 489px;
+//    padding: 20px;
+//
+//    @include respond-to(sm) {
+//      width: 95%;
+//      padding: 15px;
+//    }
+//
+//    .order-popup-content {
+//      width: 100%;
+//      max-width: 422px;
+//
+//      .input, button {
+//        width: 100%;
+//      }
+//    }
+//  }
+//}

@@ -1,8 +1,18 @@
 @import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
 @import "../../../../assets/styles/global";
 
 header.header {
   padding: 40px 0;
+  position: relative;
+
+  @include respond-to(md) {
+    padding: 15px 0;
+  }
+
+  @include respond-to(sm) {
+    padding: 10px 0;
+  }
 
   .container {
     display: flex;
@@ -11,8 +21,58 @@ header.header {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
+    position: relative;
 
+    @include respond-to(lg) {
+      flex-wrap: wrap;
+    }
+
+    // Логотип
+    .logo {
+      //display: flex;
+      //align-items: center;
+
+      @include respond-to(lg) {
+        order: 1;
+      }
+
+      svg {
+        @include respond-to(md) {
+          width: 70px;
+          height: auto;
+        }
+
+        @include respond-to(sm) {
+          width: 60px;
+        }
+      }
+    }
+
+    // Меню навигации
     .header-menu {
+      @include respond-to(lg) {
+        order: 3;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      @include respond-to(md) {
+        margin-top: 15px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding: 20px;
+        margin-top: 0;
+
+        &.active {
+          display: block;
+        }
+      }
 
       nav ul {
         margin: 0;
@@ -20,9 +80,34 @@ header.header {
         display: flex;
         gap: 30px;
 
+        @include respond-to(lg) {
+          gap: 20px;
+        }
+
+        @include respond-to(md) {
+          flex-direction: column;
+          gap: 15px;
+          align-items: flex-start;
+        }
+
+        @include respond-to(sm) {
+          gap: 12px;
+        }
+
         li {
           list-style: none;
           border-bottom: 1px solid transparent;
+
+          @include respond-to(md) {
+            width: 100%;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E0E0E0;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
 
           a {
             color: $black-text-color;
@@ -33,6 +118,21 @@ header.header {
             font-weight: 500;
             font-size: 16px;
             transition: all 0.3s ease; // Добавляем плавный переход для всех свойств
+
+            @include respond-to(lg) {
+              font-size: 14px;
+            }
+
+            @include respond-to(md) {
+              font-size: 16px;
+              display: block;
+              width: 100%;
+              padding: 8px 0;
+            }
+
+            @include respond-to(sm) {
+              font-size: 14px;
+            }
 
             &:hover {
               color: $blue-text-color;
@@ -49,10 +149,35 @@ header.header {
     .header-phone {
       color: $blue-text-color;
       text-decoration: none;
+
+      @include respond-to(lg) {
+        order: 2;
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: 20px;
+      }
+
+      @include respond-to(md) {
+        font-size: 13px;
+        margin-right: 15px;
+      }
+
+      @include respond-to(sm) {
+        font-size: 12px;
+        margin-right: 10px;
+      }
     }
 
     .header-actions {
       display: flex;
+
+      @include respond-to(lg) {
+        order: 2;
+      }
+
+      @include respond-to(sm) {
+        margin-left: auto;
+      }
 
       a {
         display: flex;
@@ -60,12 +185,69 @@ header.header {
         text-decoration: none;
         cursor: pointer;
 
+        @include respond-to(sm) {
+          span {
+            display: none; // Скрываем текст на мобильных
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
         span {
           color: $black-text-color;
           margin-left: 7px;
+
+          @include respond-to(md) {
+            font-size: 14px;
+          }
         }
       }
+    }
+  }
+}
 
+// Бургер-меню (будет появляться на мобильных)
+.header-burger {
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+    order: 2;
+    margin-left: auto;
+    margin-right: 15px;
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+
+    @include respond-to(sm) {
+      margin-right: 10px;
+    }
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: $blue-text-color;
+      margin: 5px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
     }
   }
 }

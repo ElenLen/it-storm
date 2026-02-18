@@ -4,6 +4,14 @@
 .detail {
   margin: 80px 0 120px 0;
 
+  @include respond-to(md) {
+    margin: 40px 0 60px 0;
+  }
+
+  @include respond-to(sm) {
+    margin: 30px 0 40px 0;
+  }
+
   .container {
     .detail-breadcrumbs {
       .detail-breadcrumbs-text {
@@ -12,6 +20,10 @@
         font-weight: 400;
         font-size: 16px;
         color: #B9D5FD;
+
+        @include respond-to(sm) {
+          font-size: 14px;
+        }
 
         span {
           color: $blue-text-color;
@@ -24,13 +36,32 @@
       display: flex;
       justify-content: space-between;
 
+      @include respond-to(lg) {
+        flex-direction: column;
+        margin: 40px 0;
+      }
+
+      @include respond-to(sm) {
+        margin: 30px 0;
+      }
+
       .detail-header-block {
         width: 607px;
         color: $blue-text-color;
 
+        @include respond-to(lg) {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+
         .detail-header-block-title {
           @include head-lora-38;
           margin-bottom: 40px;
+
+          @include respond-to(sm) {
+            margin-bottom: 25px;
+            text-align: center;
+          }
         }
 
         .detail-header-block-text {
@@ -39,13 +70,37 @@
           font-weight: 400;
           font-size: 20px;
           line-height: 130%;
+
+          @include respond-to(md) {
+            font-size: 18px;
+          }
+
+          @include respond-to(sm) {
+            font-size: 16px;
+          }
         }
       }
 
-      .detail-header-img img {
-        box-sizing: border-box;
-        width: 527px;
-        border-radius: 5px;
+      .detail-header-img {
+        @include respond-to(lg) {
+          width: 100%;
+          text-align: center;
+        }
+
+        img {
+          box-sizing: border-box;
+          width: 527px;
+          border-radius: 5px;
+
+          @include respond-to(lg) {
+            width: 100%;
+            max-width: 527px;
+          }
+
+          @include respond-to(sm) {
+            max-width: 100%;
+          }
+        }
       }
     }
 
@@ -53,8 +108,21 @@
       display: flex;
       justify-content: space-between;
 
+      @include respond-to(lg) {
+        flex-direction: column;
+      }
+
       .detail-body-article {
         margin-right: 130px;
+
+        @include respond-to(lg) {
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+
+        @include respond-to(sm) {
+          margin-bottom: 30px;
+        }
 
         .detail-body-article-text {
           ::ng-deep {
@@ -67,6 +135,11 @@
               line-height: 130%;
               color: #071739;
               margin-top: 20px;
+
+              @include respond-to(sm) {
+                font-size: 13px;
+                margin-top: 15px;
+              }
             }
           }
         }
@@ -81,12 +154,32 @@
           display: flex;
           align-items: center;
 
+          @include respond-to(md) {
+            margin-top: 40px;
+            flex-wrap: wrap;
+          }
+
+          @include respond-to(sm) {
+            margin-top: 30px;
+            justify-content: center;
+            font-size: 12px;
+          }
+
           p {
             margin-right: 20px;
+
+            @include respond-to(sm) {
+              margin-right: 10px;
+              margin-bottom: 10px;
+            }
           }
 
           a {
             margin-right: 14px;
+
+            @include respond-to(sm) {
+              margin-right: 8px;
+            }
           }
         }
       }
@@ -94,10 +187,22 @@
       .detail-body-announce {
         margin-top: 60px;
 
+        @include respond-to(lg) {
+          margin-top: 0;
+        }
+
+        @include respond-to(sm) {
+          margin-top: 30px;
+        }
+
         .detail-body-announce-title {
           @include head-lora-26;
           color: #709FDC;
           margin-bottom: 20px;
+
+          @include respond-to(sm) {
+            text-align: center;
+          }
         }
 
         .detail-body-announce-card {
@@ -105,6 +210,16 @@
           display: grid;
           grid-template-columns: repeat(1, 1fr);
           row-gap: 60px;
+
+          @include respond-to(lg) {
+            width: 100%;
+            max-width: 292px;
+            margin: 0 auto;
+          }
+
+          @include respond-to(sm) {
+            row-gap: 40px;
+          }
         }
       }
     }
@@ -112,11 +227,23 @@
     .detail-comments {
       margin-top: 120px;
 
+      @include respond-to(md) {
+        margin-top: 60px;
+      }
+
+      @include respond-to(sm) {
+        margin-top: 40px;
+      }
+
       .detail-comments-title {
         @include head-lora-38;
         line-height: unset;
         display: flex;
         flex-direction: column;
+
+        @include respond-to(sm) {
+          text-align: center;
+        }
 
         span {
           margin-top: 20px;
@@ -126,6 +253,11 @@
           font-size: 14px;
           color: #071739;
           line-height: unset;
+
+          @include respond-to(sm) {
+            font-size: 12px;
+            margin-top: 15px;
+          }
 
           a {
             color: $blue-text-color;
@@ -138,6 +270,15 @@
       .detail-comments-login {
         margin-top: 40px;
         width: 818px;
+
+        @include respond-to(lg) {
+          width: 100%;
+          max-width: 818px;
+        }
+
+        @include respond-to(sm) {
+          margin-top: 30px;
+        }
 
         .detail-comments-input {
           box-sizing: border-box;
@@ -157,6 +298,21 @@
           font-size: 14px;
           color: $black-text-color;
 
+          @include respond-to(lg) {
+            width: 100%;
+          }
+
+          @include respond-to(md) {
+            height: 200px;
+            padding: 15px;
+          }
+
+          @include respond-to(sm) {
+            height: 150px;
+            padding: 12px;
+            font-size: 13px;
+          }
+
           &.invalid {
             border-color: #ff5252;
           }
@@ -172,12 +328,20 @@
           font-size: 12px;
           margin-top: -15px;
           margin-bottom: 10px;
+
+          @include respond-to(sm) {
+            font-size: 11px;
+          }
         }
 
         .submit-error {
           color: #ff5252;
           font-size: 14px;
           margin-bottom: 15px;
+
+          @include respond-to(sm) {
+            font-size: 12px;
+          }
         }
 
         .detail-comments-btn {
@@ -194,6 +358,21 @@
           border: none;
           transition: background-color 0.3s ease;
 
+          @include respond-to(md) {
+            width: 100%;
+            max-width: 422px;
+            padding: 12px 30px;
+            height: 45px;
+            font-size: 14px;
+          }
+
+          @include respond-to(sm) {
+            width: 100%;
+            height: 40px;
+            font-size: 13px;
+            padding: 10px 20px;
+          }
+
           &:hover:not(:disabled) {
             background-color: #3d7dc9;
           }
@@ -208,6 +387,14 @@
 
       .detail-comments-user {
         margin: 60px 0;
+
+        @include respond-to(md) {
+          margin: 40px 0;
+        }
+
+        @include respond-to(sm) {
+          margin: 30px 0;
+        }
       }
 
       .load-more-container {
@@ -219,11 +406,21 @@
           align-items: center;
           cursor: pointer;
 
+          @include respond-to(sm) {
+            width: 100%;
+            max-width: 336px;
+            margin: 0 auto;
+          }
+
           .detail-comments-user-more-title {
             font-weight: 500;
             font-size: 20px;
             color: $blue-text-color;
             margin-right: 10px;
+
+            @include respond-to(sm) {
+              font-size: 16px;
+            }
           }
         }
       }
