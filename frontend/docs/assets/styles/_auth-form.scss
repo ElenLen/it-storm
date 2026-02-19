@@ -1,0 +1,127 @@
+@import "variables";
+@import "mixins";
+
+.auth-container {
+  padding: 120px 0;
+
+  @include respond-to(md) {
+    padding: 60px 0;
+  }
+
+  @include respond-to(sm) {
+    padding: 40px 0;
+    flex-direction: column !important;
+  }
+
+  .auth-form {
+
+    .auth-title {
+      font-family: 'Lora', sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      color: $blue-text-color;
+      margin-bottom: 40px;
+
+      @include respond-to(md) {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      @include respond-to(sm) {
+        font-size: 28px;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+    }
+
+    .auth-inputs {
+
+      .auth-input {
+        margin-bottom: 5px;
+
+        input {
+          width: 100%;
+          max-width: 422px;
+
+          @include respond-to(sm) {
+            width: 100%;
+          }
+        }
+      }
+
+      .auth-checkbox {
+        max-width: 422px;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        @include respond-to(sm) {
+          max-width: 100%;
+        }
+
+        input {
+          margin: 0;
+        }
+
+        label {
+          font-size: 14px;
+          line-height: 130%;
+          margin-left: 10px;
+
+          @include respond-to(sm) {
+            font-size: 12px;
+          }
+
+          a {
+            color: #071739;
+            text-decoration: none;
+          }
+
+          .agree {
+            text-decoration-line: underline;
+            color: #709FDC;
+          }
+
+        }
+      }
+    }
+
+    .auth-button {
+      margin-top: 40px;
+
+      @include respond-to(md) {
+        margin-top: 30px;
+      }
+
+      @include respond-to(sm) {
+        margin-top: 25px;
+      }
+
+      button.button {
+        width: 100%;
+        max-width: 422px;
+
+        @include respond-to(sm) {
+          width: 100%;
+        }
+      }
+    }
+
+    .auth-link {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #1E1A2B;
+
+      @include respond-to(sm) {
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        margin-left: 5px;
+        color: $blue-text-color;
+      }
+    }
+  }
+}
+
