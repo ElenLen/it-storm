@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8fbbab83-3125-4608-9226-397595d55a8a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/migrate-mongo-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/483.9d2f0d9ad5c0a9ee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/874.19b56ae932e8a9ad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Lora-Regular.23f684d543149bcc.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Montserrat-Bold.30ee527fe4b339b9.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Montserrat-LightItalic.7a09aa0fbb0a1fc3.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Montserrat-Medium.861bdc7038a6624b.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Montserrat-Regular.35b193b3aea14399.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/Montserrat-SemiBold.276fe145c335ba8b.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Lora-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Montserrat-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/fonts/Montserrat-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/blog/image9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/main_b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/main_b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/main_b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/page/signup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/reviews/review7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/services/card1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/services/card2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/services/card3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/images/services/card4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/_auth-form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/_fonts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/_global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/assets/styles/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/main.baae3f3a0e308769.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/owl.video.play.e3b436436832b027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/polyfills.5fd626fde791e8c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/runtime.baaa542cc9972a4d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docs/styles.cc8afb37e7648b1a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.interceptor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-card/article-card.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-card/article-card.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-card/article-card.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/comment-card/comment-card.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/comment-card/comment-card.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/comment-card/comment-card.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/loader/loader.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/loader/loader.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/loader/loader.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/directives/password-repeat.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/layout.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/layout.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/articles.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/category.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/loader.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/order.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/scroll-observer.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/articles/articles.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/articles/articles.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/articles/articles.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/blog-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/blog.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/detail/detail.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/detail/detail.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/blog/detail/detail.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/agree/agree.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/agree/agree.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/agree/agree.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/user-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/user.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Lora-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Montserrat-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/Montserrat-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/blog/image9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/main_b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/main_b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/main_b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/page/signup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/reviews/review7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/services/card1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/services/card2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/services/card3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/services/card4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_auth-form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_fonts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/active-params.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/addComment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/article.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/category.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/comments-params.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/comments.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/default-response.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/login-response.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/order.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/popular-articles.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/user-info.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.spec.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="36Qh73h8PN3iY94EhJeSvRfSath" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/User/Desktop/ItLogia/Frontend/works/it-storm",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\User\\Desktop\\ItLogia\\Frontend\\works\\it-storm\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\types" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\app\shared\services" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\app\core\auth" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\images" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\styles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\images\blog" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\images\page" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\images\services" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\styles" />
+      <recent name="C:\Users\User\Desktop\ItLogia\Frontend\works\it-storm\frontend\src\assets\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (it-storm)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/frontend/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8fbbab83-3125-4608-9226-397595d55a8a" name="Changes" comment="" />
+      <created>1764944532266</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764944532266</updated>
+      <workItem from="1764944533357" duration="30084000" />
+      <workItem from="1765425783153" duration="72000" />
+      <workItem from="1765557467662" duration="2567000" />
+      <workItem from="1765638788058" duration="24318000" />
+      <workItem from="1766413223451" duration="47120000" />
+      <workItem from="1766678226643" duration="70481000" />
+      <workItem from="1766996764350" duration="30946000" />
+      <workItem from="1767342326600" duration="82869000" />
+      <workItem from="1767593912473" duration="88515000" />
+      <workItem from="1767973212061" duration="33233000" />
+      <workItem from="1768230577705" duration="16404000" />
+      <workItem from="1771346916602" duration="2241000" />
+      <workItem from="1771401643662" duration="26138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
