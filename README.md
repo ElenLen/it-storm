@@ -308,3 +308,12 @@ it-storm
             popular-articles.type.ts
             user-info.type.ts
     
+### Вид сайта:
+
+![main.png](frontend%2Fsrc%2Fassets%2Fimages%2Fmain.png)
+
+![blog.png](frontend%2Fsrc%2Fassets%2Fimages%2Fblog.png)
+
+![blog_2.png](frontend%2Fsrc%2Fassets%2Fimages%2Fblog_2.png)
+
+![login.png](frontend%2Fsrc%2Fassets%2Fimages%2Flogin.png)
